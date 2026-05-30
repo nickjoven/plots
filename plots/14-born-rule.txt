@@ -1,0 +1,36 @@
+BORN RULE  exponent = 2
+probability = amplitude squared
+
+The Born rule says that a probability is the square of an amplitude, and the
+number that connects them is the exponent two. It is drawn by taking an amplitude
+as a length along the grid and building the square on that length, whose area is
+the probability. The step from a side to the area it encloses is the squaring,
+and the exponent two is what that step always costs.
+
+================================================================
+PROCESS  -  a length becomes its square
+================================================================
+
+A length L is laid along the bottom of the grid, and the square on it is filled
+in. For a side of three units the area is nine unit cells.
+
+  L = 3 (amplitude)            square on L (probability)
+                               3 #  #  #
+  o---o---o---o                2 #  #  #
+  0   1   2   3                1 #  #  #
+                                 1  2  3   area = 3 x 3 = 9
+
+The side is the amplitude and the filled area is the probability. Doubling the
+side to six would not double the area but quadruple it to thirty-six, because the
+area grows as the side raised to the power two.
+
+================================================================
+ARRIVAL  -  the exponent
+================================================================
+
+The arrival is the exponent two itself, the fixed power in the relation between
+side and area. It does not depend on which length is chosen, since every square
+has area equal to its side raised to the second power. The manifest gives this as
+exact and sources it to derivations D1 and D9. To redraw it by hand, draw any
+length, build the square on it, and count that the area is the side multiplied by
+itself.

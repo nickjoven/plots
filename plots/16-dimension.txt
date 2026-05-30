@@ -1,0 +1,42 @@
+SPATIAL DIMENSION  =  3
+the dimension ladder
+
+The spatial dimension is three, and it is drawn as a ladder that adds one
+independent direction at each rung. The first rung is a point, which has no
+direction and is zero-dimensional. The second is a segment, which adds one
+direction along its length. The third is a square, which adds a second direction
+across the first. The fourth is a cube, which adds a third direction out of the
+square. The third spatial direction is the arrival, and it is the same dimension
+that turns the integers into the cubes of item 11.
+
+================================================================
+PROCESS  -  add one perpendicular direction per rung
+================================================================
+
+Each rung takes the figure before it and sweeps it along a new direction that is
+perpendicular to all the directions already there.
+
+  dim 0       dim 1            dim 2              dim 3
+  point       segment          square             cube
+                                                    ____
+   *          o---o            o---o              /__/ |
+                               |   |              |  | /
+                               o---o              |__|/
+
+  0 directions  1 direction    2 directions       3 directions
+
+The point has nothing to sweep, the segment is the point swept along one line,
+the square is the segment swept sideways, and the cube is the square swept
+upward. Each rung is one sweep, and each sweep adds exactly one direction.
+
+================================================================
+ARRIVAL  -  the third direction
+================================================================
+
+The arrival is the third rung, the cube, the figure that holds three
+perpendicular directions. The framework stops here because space has three
+directions, and this is the dimension that makes the side-two and side-three
+cubes of item 11 have volume rather than area. The manifest gives the value as
+exactly three and sources it to derivation D14. To redraw the ladder by hand,
+draw a point, sweep it into a segment, sweep that into a square, and sweep that
+into a cube, counting one new direction at each step.

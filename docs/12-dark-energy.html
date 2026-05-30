@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DARK ENERGY  Omega_Lambda = 13/19</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<p class="back"><a href="index.html">&larr; index</a></p>
+<h1>DARK ENERGY  Omega_Lambda = 13/19</h1>
+<pre class="plot">DARK ENERGY  Omega_Lambda = 13/19
+computed 13/19 = 0.6842    observed 0.6847 +/- 0.0073    (0.07 sigma)
+
+The dark-energy fraction is the value 13/19, reached as a path down the
+Stern-Brocot tree of item 09. Starting at the root 1/1, each step goes left when
+the target is below the current mediant and right when it is above, and the
+mediant is recomputed after every step. The path that lands on 13/19 is eight
+steps long, and the fraction it arrives at is the one the framework reports for
+the share of the universe that is dark energy.
+
+================================================================
+PROCESS  -  the left-right path to 13/19
+================================================================
+
+The path is L R R L L L L L. Each move replaces one bound with the current
+mediant, and the mediant marches toward the target.
+
+  step   move   mediant
+   0      .     1/1     (start, above the target)
+   1      L     1/2     (now below)
+   2      R     2/3
+   3      R     3/4     (above)
+   4      L     5/7
+   5      L     7/10
+   6      L     9/13
+   7      L     11/16
+   8      L     13/19   (arrived)
+
+The mediants 1/2, 2/3, 9/13 are the convergents that bracket 13/19 ever more
+tightly, and the run lengths of the path, one then two then five, are the
+continued fraction of 13/19, written [0; 1, 2, 6].
+
+================================================================
+ARRIVAL  -  the fraction as a lattice direction
+================================================================
+
+The arrival 13/19 is also the lattice vector (19,13), the direction whose rise
+over run is thirteen over nineteen. Drawn from the origin it points just above
+the diagonal, at slope 0.684.
+
+ 13 ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  o   (19,13)
+    |                       _.--&#x27;
+    |                 _.--&#x27;&#x27;
+  0 O---------------------------- x
+    0                          19
+
+The computed value 0.6842 sits 0.07 standard deviations from the observed
+0.6847, which the manifest sources to derivations D25 and D28. To redraw the path
+by hand, start at 1/1 and step left or right toward 0.684, recomputing the
+mediant each time, until the eighth step lands on 13/19.
+</pre>
+</main>
+</body>
+</html>

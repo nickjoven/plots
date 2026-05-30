@@ -1,0 +1,46 @@
+ANOMALY CANCELLATION AS A CLOSED WALK
+all 6 conditions = 0
+
+An anomaly condition is a sum of charges that must come out to zero for the
+theory to hold together. It is drawn as a walk along a line, where each charge is
+one step forward or backward, and the requirement is that the walk return exactly
+to its start. The standard model has six such conditions, one for each way the
+charges can combine, and all six close. The drawing shows one of them, the
+gravitational condition, which is the plain sum of the hypercharges of one
+generation of matter.
+
+================================================================
+PROCESS  -  step through the charges, return to zero
+================================================================
+
+Each kind of particle contributes its hypercharge times how many copies of it
+there are, counting three colours for quarks and two members for each weak pair.
+The steps are laid end to end along the line.
+
+  particles            contribution        running total
+  Q  (6 copies, +1/6)     +1                  +1
+  u  (3 copies, -2/3)     -2                  -1
+  d  (3 copies, +1/3)     +1                   0
+  L  (2 copies, -1/2)     -1                  -1
+  e  (1 copy,   +1)       +1                   0   <- back to start
+
+  +1 |    *----*
+     |   /      \         *----*
+   0 *--/        \       /      \---*   returns to 0
+     |            \     /
+  -1 |             *---*
+       Q    u    d    L    e
+
+The walk goes up by one, down by two, up by one, down by one, up by one, and ends
+on zero where it began. That return to zero is the cancellation.
+
+================================================================
+ARRIVAL  -  the closed walk
+================================================================
+
+The arrival is the closed walk, the path that ends on its starting point so the
+total charge is zero. The same return happens for all six conditions, each a
+different combination of the charges, and the manifest records all six as exactly
+zero and sources them to derivation D41. To redraw this by hand, write the
+hypercharge of each particle times its count, lay the steps end to end, and check
+that the path comes back to where it started.

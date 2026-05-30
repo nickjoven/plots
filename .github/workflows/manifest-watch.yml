@@ -1,0 +1,69 @@
+name: manifest-watch
+
+# Watch the upstream harmonics manifest for changes. The drawings pull their
+# values from nickjoven/harmonics MANIFEST.yml, and a vendored snapshot of it
+# lives at reference/MANIFEST.yml. On a schedule this job fetches the live
+# upstream file and compares it to the snapshot. If they differ it opens (or
+# updates) an issue with the diff, which is the signal that the values behind
+# the plots may have moved. Upstream is public, so no token is needed to fetch.
+
+on:
+  schedule:
+    - cron: '0 6 * * 1'   # every Monday 06:00 UTC
+  workflow_dispatch:        # also runnable on demand
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      UPSTREAM: https://raw.githubusercontent.com/nickjoven/harmonics/main/MANIFEST.yml
+      ISSUE_TITLE: 'Upstream MANIFEST.yml changed'
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch upstream manifest
+        run: curl -fsSL "$UPSTREAM" -o upstream-MANIFEST.yml
+
+      - name: Compare with vendored snapshot
+        id: compare
+        run: |
+          if diff -u reference/MANIFEST.yml upstream-MANIFEST.yml > manifest.diff; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "Upstream manifest matches the vendored snapshot."
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            echo "Upstream manifest differs from the vendored snapshot."
+          fi
+
+      - name: Open or update drift issue
+        if: steps.compare.outputs.changed == 'true'
+        run: |
+          {
+            echo "The upstream manifest at \`nickjoven/harmonics/MANIFEST.yml\` differs"
+            echo "from the vendored snapshot at \`reference/MANIFEST.yml\`. The values"
+            echo "behind the plots may have moved; check the affected drawings, then"
+            echo "refresh the snapshot (see \`reference/README.md\`)."
+            echo
+            echo "Diff (vendored vs upstream):"
+            echo
+            echo '```diff'
+            cat manifest.diff
+            echo '```'
+          } > issue-body.md
+
+          existing=$(gh issue list --state open --search "$ISSUE_TITLE in:title" \
+            --json number,title \
+            --jq "map(select(.title == \"$ISSUE_TITLE\")) | .[0].number // empty")
+
+          if [ -n "$existing" ]; then
+            echo "Updating existing issue #$existing"
+            gh issue comment "$existing" --body-file issue-body.md
+          else
+            echo "Opening a new issue"
+            gh issue create --title "$ISSUE_TITLE" --body-file issue-body.md
+          fi

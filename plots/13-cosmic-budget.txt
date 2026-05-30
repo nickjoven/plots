@@ -1,0 +1,56 @@
+THE COSMIC BUDGET THAT TILES THE GRID
+single-component:  1 + 5 + 13 = 19
+two-component:     13 + 70 + 181 = 264
+
+The three parts of the universe, ordinary matter, dark matter, and dark energy,
+are drawn here as pieces that cut a bar into exact whole-number lengths with
+nothing left over. In the single-component reading the bar has length nineteen,
+the same budget integer from item 10, and the pieces are one, five, and thirteen.
+In the refined two-component reading the bar has length two hundred sixty-four,
+and the pieces are thirteen, seventy, and one hundred eighty-one. Each bar fills
+completely, which is the closure the framework labels Class 5.
+
+================================================================
+THE BAR OF 19  (single component)
+================================================================
+
+  |b|  dark matter  |     dark energy        |
+  [#][#####][#############]
+   1    5          13                 = 19
+
+  baryons       1/19  = 0.0526
+  dark matter   5/19  = 0.2632
+  dark energy  13/19  = 0.6842
+  sum          19/19  = 1
+
+The dark-energy piece is the thirteen from item 12. The three pieces are the
+fractions over nineteen, and they add to the whole bar exactly.
+
+================================================================
+THE BAR OF 264  (two component)
+================================================================
+
+  |   13   |        70         |             181              |
+  [########][##################][##############################]
+     13              70                       181              = 264
+
+  baryons      13/264  = 0.04924   observed 0.0493  +/- 0.0003
+  dark matter  70/264  = 0.26515   observed 0.265   +/- 0.007     (= 35/132)
+  dark energy 181/264  = 0.68561   observed 0.6847  +/- 0.0073
+  sum         264/264  = 1
+
+The dark-matter piece seventy over two hundred sixty-four is the same as
+thirty-five over one hundred thirty-two, which carries the thirty-five from the
+cubes of item 11. The ratio of dark matter to baryons is seventy over thirteen,
+about 5.385.
+
+================================================================
+ARRIVAL  -  the filled bar
+================================================================
+
+The arrival is the bar with no gap and no overhang: the pieces are whole numbers
+that sum to the bar length, so the three shares of the universe close to one
+exactly. The manifest sources this to derivation D47 and the closure files, and
+records every piece within its observed error bar. To redraw it by hand, draw a
+bar of nineteen squares and cut it at one and at six, or a bar of two hundred
+sixty-four and cut it at thirteen and at eighty-three.
