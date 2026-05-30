@@ -1,0 +1,59 @@
+THE CUBES AND THE DUTY CYCLE
+q2^3 = 8   q3^3 = 27   sum = 35      in dimension d = 3
+
+In dimension three the two base integers become cubes. The integer q2 = 2 becomes
+the block two by two by two, whose volume is eight. The integer q3 = 3 becomes the
+block three by three by three, whose volume is twenty-seven. Their sum is
+thirty-five. The cubing is because the dimension is three, the value drawn in item
+16; in a different dimension the same construction would raise the integers to a
+different power. The bare reference values the manifest calls the K=1 identities
+are all ratios of these two volumes.
+
+================================================================
+THE TWO VOLUMES  8 and 27
+================================================================
+
+     q2^3 = 2x2x2 = 8            q3^3 = 3x3x3 = 27
+        ______                      ________
+       /__/__/|                    /__/__/__/|
+      /__/__/||                   /__/__/__/||
+      |  |  |/|                   /__/__/__/|||
+      |__|__|/|                   |  |  |  |/||
+      |  |  |/                    |__|__|__|/||
+      |__|__|                     |  |  |  |/|
+                                  |__|__|__|/|
+       8 cells                    |  |  |  |/
+                                  |__|__|__|
+                                   27 cells
+
+The volume is the count of unit cells in the block: eight for the side-two cube
+and twenty-seven for the side-three cube. Their sum, eight plus twenty-seven, is
+thirty-five.
+
+================================================================
+THE DUTY-CYCLE RATIOS
+================================================================
+
+Each identity is a comparison of these two volumes, drawn as the ratio of one
+block to another or of one block to the combined thirty-five.
+
+  sin^2 theta_W  =  q2^3 / (q2^3 + q3^3)  =  8 / 35   =  0.22857...
+  alpha_s/alpha_2 =  q3^3 / q2^3          =  27 / 8   =  3.375
+  1/alpha_em (tree) =  q2^3 + q3^3        =  35
+  m_H / v        =  1 / q2                =  1 / 2    =  0.5
+  lambda_higgs   =  1 / q2^3             =  1 / 8    =  0.125
+
+================================================================
+ARRIVAL  -  bare values, with their status
+================================================================
+
+The arrival is the set of exact ratios above. The manifest records these as
+substrate-side reference values at the K=1 point, not as predictions at the Z
+scale, and each carries a gap of about one to three percent to the measured value
+that the framework declines to close from the grid alone. The drawing therefore
+shows them as exact volume ratios and notes that status rather than presenting
+them as final physical numbers.
+
+To redraw the set by hand, draw the side-two and side-three cubes, count their
+cells as eight and twenty-seven, and form the five ratios above from those two
+counts and their sum.
