@@ -1,0 +1,52 @@
+THE GROUP  SL(2,Z) = <T, S>
+T = [[1,1],[0,1]]  (lean)      S = [[0,-1],[1,0]]  (turn)
+
+SL(2,Z) is the set of all two-by-two matrices with whole-number entries and
+determinant one. Every such matrix is a move that sends the integer lattice onto
+itself while keeping area unchanged, and every one of them can be spelled as a
+sequence of the lean T and the turn S. This drawing shows that the lattice of
+points never changes under these moves, and that the only thing that moves is the
+basis, which is the pair of vectors chosen to measure the grid. Each basis spans
+a cell, and every cell has area exactly one.
+
+================================================================
+WHOLE view  -  the same lattice, different bases
+================================================================
+
+The dots are the same lattice in every frame. The marked pair (b1, b2) is the
+basis, and the shaded corner is the cell it spans. The cell changes shape from
+frame to frame but always covers one unit of area.
+
+  identity                 after T (lean)           after S (turn)
+y                        y                        y
+2 ·  ·  ·  ·             2 ·  ·  ·  ·             2 ·  ·  ·  ·
+1 b2 *  ·  ·             1 ·  b2 ·  ·             1 b1 ·  ·  ·
+  |  |                       \  \                    |
+0 O--b1-·  ·             0 O--b1-·  ·             0 b2-O  ·  ·    (b2 at (-1,0))
+  O  1  2                    O  1  2                 -1 O  1
+
+bases and cells:
+  identity : b1 = (1,0)  b2 = (0,1)    det = 1
+  after T  : b1 = (1,0)  b2 = (1,1)    det = 1   the cell leaned
+  after S  : b1 = (0,1)  b2 = (-1,0)   det = 1   the cell turned
+  after ST : b1 = (0,1)  b2 = (-1,1)   det = 1   leaned then turned
+
+Every basis in the list spans a cell of area one, and the dots they sit on are
+the identical lattice in all four frames. Changing the basis re-measures the same
+grid; it does not make a new one.
+
+================================================================
+ARRIVAL  -  area one, the lattice fixed
+================================================================
+
+The fact that holds across the whole group is that the determinant is one, which
+is the statement that area is preserved and that the lattice maps onto itself
+with nothing added or lost. The two moves T and S are enough to reach every
+element, so the entire group is built from just the lean and the turn. This
+area-one condition is the same one that makes the mediant of item 04 the simplest
+fraction between two others, and it is the structure the Farey sequence of item
+09 is built inside.
+
+To redraw this by hand, plot the lattice once, then draw a few different bases on
+top of it. Check that each basis cell covers one grid square of area, and notice
+that the underlying dots are unchanged no matter which basis is drawn.
