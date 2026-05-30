@@ -41,6 +41,6 @@ A drawing shows motion in one of two ways. A **process** is a sequence of frames
 
 ## Files
 
-The file `plots/shear.txt` draws the shear move T, shown first as a process and then as an arrival, and given in all three views.
+The file `MAP.md` is the index. It lists every object in the manifest that can be drawn as stepwise motion, fixes the order in which they are drawn, and records the objects that are left out and why. The order is ontological: an object is drawn only after the objects it is built from have been drawn.
 
-Further drawings will be added once the language is settled. The planned set includes the rotate S, the mediant picture that shows why adjacent Farey fractions span an area of exactly 1, the Stern-Brocot path that arrives at the dark-energy fraction Omega_Lambda = 13/19, the Iwasawa factoring of a move into the product k·a·n, and the Klein-bottle integers q2 = 2, q3 = 3, and |F_6| = 13.
+The file `plots/shear.txt` draws the shear move T, shown first as a process and then as an arrival, and given in all three views. It is drawing 05 in the map. The drawings before it (the integer grid, the fixed point, the parabola, and the mediant) and after it (the rotate, the group, the Iwasawa factoring, and the arrivals) follow the order set in `MAP.md`.
