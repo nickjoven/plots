@@ -1,0 +1,54 @@
+PARABOLA  /  BIFURCATION
+x² + μ = 0      roots at x = ± sqrt(-μ)
+
+The parabola is the curve y = x² + μ, an upward bowl whose lowest point sits at
+height μ on the vertical axis. The roots are the values of x where the curve
+meets the x-axis, which are the solutions of x² + μ = 0. Whether those roots
+exist depends on the sign of μ, and stepping μ downward past zero is the moment
+where the picture changes from no roots to two roots. That change is the
+bifurcation.
+
+================================================================
+PROCESS  -  lower the bowl by stepping μ down
+================================================================
+
+Each frame is the same bowl shifted to a new height μ. As μ steps down, the
+bottom of the bowl sinks through the x-axis, and where it cuts the axis the two
+roots appear and walk apart.
+
+  μ = +1  (bowl above axis)     μ = 0  (bowl touches)      μ = -4  (bowl cut)
+ y                            y                          y
+ 4 \           /             4 \           /             4 \           /
+ 2  \         /              2  \         /              2  \         /
+ 1   \__   __/               0 --\___.___/----- x        0 --*---.---*---- x
+ 0 ----\_./----- x              (touch at 0)            -2    \_._/   (roots
+   no crossing                                          -4      *      -2,+2)
+        μ=+1                         μ=0                     μ=-4
+
+roots by frame:
+  μ = +1 :  none            the bowl clears the axis
+  μ =  0 :  x = 0 (double)  the bowl is tangent to the axis at one point
+  μ = -1 :  x = -1, +1      the bowl cuts the axis at two points
+  μ = -4 :  x = -2, +2      lowering μ further pushes the two roots apart
+
+================================================================
+ARRIVAL  -  the two roots opening from one
+================================================================
+
+The arrival is best seen by plotting the roots themselves against μ rather than
+the bowl. Below zero the two roots are plus and minus the square root of minus μ,
+so as μ decreases they trace a sideways parabola opening to the left from the
+single point at μ = 0.
+
+        x
+   +2 |              *  (μ=-4)
+   +1 |        *  (μ=-1)
+    0 |---*--------------- μ   (μ=0: the two roots meet at one point)
+   -1 |        *
+   -2 |              *
+       0   -1   -2   -3   -4   (μ decreasing to the right)
+
+The single touching point at μ = 0 splits into a matched pair that grows wider as
+μ falls. To redraw it by hand, plot the bowl for a few heights and mark where it
+crosses the axis, then plot those crossings against μ to see the one point become
+two.
