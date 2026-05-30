@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MEDIANT  /  MERGE</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<p class="back"><a href="index.html">&larr; index</a></p>
+<h1>MEDIANT  /  MERGE</h1>
+<pre class="plot">MEDIANT  /  MERGE
+a/b combined with c/d  -&gt;  (a+c)/(b+d)      example: 0/1 and 1/1 -&gt; 1/2
+
+The mediant combines two fractions into the single fraction whose numerator is
+the sum of the two numerators and whose denominator is the sum of the two
+denominators. It is drawn by reading each fraction p/q as the lattice vector
+(q,p), so the denominator is the horizontal part and the numerator is the
+vertical part. Adding the two vectors tip to tail gives a third vector, and that
+third vector points at the mediant. For the example, 0/1 is the vector (1,0) and
+1/1 is the vector (1,1), and their sum is (2,1), which is the fraction 1/2.
+
+================================================================
+PROCESS  -  add the two vectors
+================================================================
+
+The two starting vectors are drawn from the origin. The mediant is their sum,
+reached by sliding the second vector so its tail sits at the first one&#x27;s tip and
+marking where it ends.
+
+y
+2 ·   ·   ·   ·
+  |
+1 ·   v2..........o   v2 = (1,1)  = 1/1
+  |  /        ___/&#x27;
+  | /     ___/   &#x27;
+  |/  ___/       &#x27;
+0 O======&gt;=======*--- x   v1 = (1,0) = 0/1 ;  sum = (2,1) = 1/2
+  O   1   2   3
+
+vectors:
+  v1 = (1,0)   the fraction 0/1   (slope 0)
+  v2 = (1,1)   the fraction 1/1   (slope 1)
+  v1 + v2 = (2,1)   the mediant 1/2   (slope 1/2, between 0 and 1)
+
+The mediant vector (2,1) lies in direction between v1 and v2, and its slope 1/2
+sits between the slopes 0 and 1 of the two it came from. The merge is a single
+step: one vector addition.
+
+================================================================
+ARRIVAL  -  the simplest fraction between, and why
+================================================================
+
+The two starting vectors span a parallelogram, and its area is the determinant
+of the pair, which for (1,0) and (1,1) is one. A lattice parallelogram of area
+one holds no lattice point inside it and none on its edges except its corners,
+so there is no fraction with a smaller denominator sitting between the two. The
+mediant is therefore the simplest fraction that fits between them, and this is
+the reason it is the value the framework chooses.
+
+  the area-one parallelogram (no point inside):
+  1 ·   *-------*      corners (0,0) (1,0) (2,1) (1,1)
+        |      /       area = det[(1,0),(1,1)] = 1
+  0 ·   *-----*--- x   the mediant (2,1) is one corner
+
+Repeating the merge on each new neighbouring pair is how the Farey sequence and
+the Stern-Brocot tree of item 09 are built. To redraw this by hand, plot the two
+fractions as vectors, add them, and check that the parallelogram they span covers
+exactly one grid square of area.
+</pre>
+</main>
+</body>
+</html>

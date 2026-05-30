@@ -1,0 +1,48 @@
+:root {
+  --ink: #1a1a1a;
+  --line: #cfe0ee;
+  --line2: #e7eff6;
+  --accent: #2b5d86;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  color: var(--ink);
+  font: 15px/1.6 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  background-color: #fbfdff;
+  background-image:
+    linear-gradient(var(--line2) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line2) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+main {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 32px 20px 80px;
+}
+h1 { font-size: 22px; margin: 0 0 16px; }
+h2 { font-size: 17px; margin: 28px 0 8px; border-bottom: 1px solid var(--line); padding-bottom: 4px; }
+h3 { font-size: 15px; margin: 20px 0 6px; }
+h4 { font-size: 15px; margin: 16px 0 6px; }
+p { margin: 10px 0; }
+a { color: var(--accent); }
+.back { font-size: 13px; margin-bottom: 20px; }
+.links { font-size: 14px; }
+.planned { color: #8a99a8; }
+ul.index { list-style: none; padding: 0; }
+ul.index li { margin: 4px 0; }
+ul.index .num { color: #8a99a8; margin-right: 8px; }
+pre.plot {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 18px 20px;
+  overflow-x: auto;
+  line-height: 1.35;
+  font-size: 13px;
+}
+table { border-collapse: collapse; margin: 12px 0; font-size: 13px; }
+th, td { border: 1px solid var(--line); padding: 4px 10px; text-align: left; vertical-align: top; }
+th { background: #f1f7fc; }
+code { background: #f1f7fc; padding: 1px 4px; border-radius: 3px; }

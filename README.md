@@ -39,6 +39,21 @@ The **vector** view shows a single tracked point together with the path it follo
 
 A drawing shows motion in one of two ways. A **process** is a sequence of frames in which one move is applied per frame, and reading the frames in order traces the path. An **arrival** is a single final state, such as a fixed point where x equals f(x) or a settled value such as a Farey fraction, and it is drawn as one frame with a note recording the path that reached it.
 
+## Preview
+
+The drawings are plain text and can be read directly from the `plots/` folder.
+A rendered version is also built into the `docs/` folder as a small static site,
+and the same site is published by GitHub Pages from that folder. To look at it
+locally there are two equally simple options. Opening the file `docs/index.html`
+in a browser works on its own, because the pages link to each other with
+relative paths and need no server. Running `make preview` instead starts a local
+server on port 8000 and serves the same folder, which is closer to how the
+published site behaves. The site is regenerated from the source files by running
+`make build`, which calls `scripts/build_site.py` and has no dependencies beyond
+Python.
+
+The published site is at https://nickjoven.github.io/plots/.
+
 ## Files
 
 The file `MAP.md` is the index. It lists every object in the manifest that can be drawn as stepwise motion, fixes the order in which they are drawn, and records the objects that are left out and why. The order is ontological: an object is drawn only after the objects it is built from have been drawn.

@@ -1,0 +1,33 @@
+name: build-pages
+
+# GitHub Pages is configured to serve the committed docs/ folder on the main
+# branch (legacy branch source), so deployment is handled by Pages itself. This
+# workflow is the CI half: on every push and pull request it rebuilds the site
+# from the source files and fails if the committed docs/ folder is out of date,
+# which keeps the published site in sync with the plots.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Build the site
+        run: python3 scripts/build_site.py
+      - name: Check docs/ is in sync with sources
+        run: |
+          if ! git diff --quiet -- docs/; then
+            echo "docs/ is out of date. Run 'make build' and commit the result."
+            git --no-pager diff --stat -- docs/
+            exit 1
+          fi

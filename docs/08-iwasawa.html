@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IWASAWA FACTORING</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<p class="back"><a href="index.html">&larr; index</a></p>
+<h1>IWASAWA FACTORING</h1>
+<pre class="plot">IWASAWA FACTORING
+g = k · a · n      turn (k)  ·  stretch (a)  ·  lean (n)
+
+Every move in SL(2,R) can be written as exactly one turn, one stretch, and one
+lean, in that order. The lean n is the shear [[1,s],[0,1]] from item 05. The
+stretch a is the diagonal matrix [[λ,0],[0,1/λ]] that pulls one axis out and
+squeezes the other by the matching amount, so that area is kept. The turn k is
+the rotation [[cosθ,-sinθ],[sinθ,cosθ]] from item 06. Writing g = k·a·n means the
+lean is applied first, then the stretch, then the turn, because the rightmost
+factor acts first on a vector. This factoring is how the framework separates a
+move into its three independent parts: the lean is detuning, the stretch is
+amplitude, and the turn is mixing.
+
+(The values below are illustrative. The factoring exists and is unique for every
+move; the particular s, λ, and θ only set this one example.)
+
+================================================================
+PROCESS  -  apply the three factors to the unit cell, in order
+================================================================
+
+The unit square is taken apart move by move. First the lean tips it, then the
+stretch pulls it long and thin, then the turn swings the whole result around.
+
+  start (square)      after n: lean s=1      after a: stretch λ=2     after k: turn
+y                   y                       y                        y
+1 *--*              1 ·  *--*               2 ·  ·  *----*           2 *
+  |  |                  \   \                          \    \          |\
+0 *--*  x           0 *--*  x            0 *--------*  x          0 *--*  x
+  0  1                 0  1  2              0    1    2 3            0  1  2
+
+stage by stage:
+  start  : square, corners (0,0)(1,0)(0,1)(1,1)
+  lean n : shear s=1 sends (0,1) to (1,1); the square becomes a leaning cell
+  stretch a : λ=2 sends x to 2x and y to y/2; the cell is pulled long and flat
+  turn k : the long cell is swung around the origin by the angle θ
+
+area stays one through every stage, because the lean has determinant one, the
+stretch multiplies by λ and by 1/λ which cancel, and the turn keeps area as well.
+
+================================================================
+ARRIVAL  -  the three named parts
+================================================================
+
+The arrival is the reading of the move as three things rather than one. The lean
+is the detuning, the part that slides without scaling. The stretch is the
+amplitude, the part that grows one direction at the cost of the other. The turn
+is the mixing, the part that rotates the axes into each other. The stretch factor
+a is the same squeeze that returns in item 20 as the Lorentz boost, where the two
+axes are space and time and the stretched and squeezed directions are the two
+edges of the light cone.
+
+  k  (turn)    : mixing      rotation by θ
+  a  (stretch) : amplitude   diagonal λ, 1/λ      &lt;- reused as the boost in item 20
+  n  (lean)    : detuning    shear s
+
+To redraw this by hand, start from a unit square and apply the three moves in the
+order lean, stretch, turn, drawing the cell after each. The three together rebuild
+the original move, and area is one at every step.
+</pre>
+</main>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ROTATE  /  TURN</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<p class="back"><a href="index.html">&larr; index</a></p>
+<h1>ROTATE  /  TURN</h1>
+<pre class="plot">ROTATE  /  TURN
+S = [[0,-1],[1,0]]      (x,y) -&gt; (-y, x)      det = 1
+
+The rotate is the move that spins the whole grid a quarter turn about the origin.
+It sends a point (x,y) to (-y,x), which is the same point swung ninety degrees
+counterclockwise. The origin stays fixed because it is the centre of the turn,
+and every other point travels on a circle around it. The determinant of S is one,
+so area is preserved and the lattice is sent exactly onto itself. This is the
+second of the two moves that generate the modular group, the first being the
+shear of item 05.
+
+================================================================
+PROCESS  -  four quarter turns return to the start
+================================================================
+
+The figure tracks the base vector e1 = (1,0) as the turn is applied four times.
+Each turn swings it a quarter circle, and after four turns it is back where it
+began. The grid here is centred so the negative coordinates are visible.
+
+        y                         positions of e1, in order:
+   2  ·  ·  ·  ·  ·                 start  (1, 0)   pointing right
+   1  ·  ·  o  ·  ·                 S      (0, 1)   pointing up
+   0  ·  o  O  o  ·  x              S·S    (-1,0)   pointing left
+  -1  ·  ·  o  ·  ·                 S·S·S  (0,-1)   pointing down
+  -2  ·  ·  ·  ·  ·                 S^4    (1, 0)   back to start
+     -2 -1  0  1  2
+
+The four marked points sit at the four compass directions around the origin.
+Reading them in order is the counterclockwise turn, and the fourth turn closes
+the cycle by landing on the first position again.
+
+================================================================
+ARRIVAL  -  the order-four cycle and the half turn
+================================================================
+
+Applied twice, the rotate gives S·S = [[-1,0],[0,-1]], which is the point
+reflection that sends every point to its opposite through the origin. Applied
+four times it gives the identity, so the move has order four: four turns are a
+full circle. There is no value the turn settles toward, because it never stops
+moving; its arrival is the closed cycle itself, the set of four positions
+returning onto each other.
+
+  the half turn  S·S = -I :   (x,y) -&gt; (-x,-y)
+  the full cycle S^4 = I  :   four turns = one full revolution
+
+To redraw this by hand, mark the origin and the point (1,0), then swing it a
+quarter circle counterclockwise four times, marking each landing. The four marks
+are the compass points, and the fourth returns to the first.
+</pre>
+</main>
+</body>
+</html>
