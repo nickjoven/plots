@@ -58,3 +58,16 @@ figcaption { font-size: 12px; color: #5a6b7a; margin-top: 6px; max-width: 320px;
 details { margin-top: 18px; }
 summary { cursor: pointer; color: var(--accent); font-size: 13px; }
 details pre.plot { margin-top: 12px; }
+#book { max-width: 540px; }
+.pages { position: relative; }
+.pages .leaf { display: none; margin: 0; }
+.pages .leaf.cur { display: block; }
+.pages .leaf svg { display: block; border: 1px solid var(--line); border-radius: 4px; background: #fff; }
+.controls { display: flex; align-items: center; gap: 18px; margin-top: 16px; }
+.controls button {
+  font: inherit; padding: 6px 13px; border: 1px solid var(--line);
+  background: #fff; border-radius: 4px; cursor: pointer; color: var(--accent);
+}
+.controls button:disabled { color: #b9c6d2; cursor: default; }
+#meter { font-size: 13px; color: #5a6b7a; }
+.pages .leaf figcaption { margin-top: 8px; font-size: 12px; color: #5a6b7a; }

@@ -93,3 +93,78 @@ RENDERERS = {
     "05-shear": shear,
     "06-rotate": rotate,
 }
+
+
+# --- the book: one page per degree of freedom ------------------------------
+def _edges(p, pts, cls="edge"):
+    n = len(pts)
+    for i in range(n):
+        a, b = pts[i], pts[(i + 1) % n]
+        p.seg(a[0], a[1], b[0], b[1], cls)
+
+
+def dof_pages():
+    """One graph-paper page per degree of freedom (the dimension ladder).
+
+    Every page uses the same paper size so paging does not jump. The figure on
+    page N is the figure on page N-1 swept along one new direction; the 4th
+    cannot lie flat and is shown projected.
+    """
+    pages = []
+
+    def paper():
+        return Paper(-0.5, 5.0, -0.5, 5.0, cell=30).grid()
+
+    # 0 — a point
+    p = paper()
+    p.mark(2, 2, "tip")
+    p.label(2, 2, "a point", dx=9, dy=-8)
+    pages.append(("0 degrees of freedom — a point", p.svg()))
+
+    # 1 — a line
+    p = paper()
+    p.seg(1, 2, 4, 2, "edge")
+    p.mark(1, 2, "tip")
+    p.mark(4, 2, "tip")
+    p.label(2.5, 2, "a line", dx=0, dy=-11)
+    pages.append(("1 degree of freedom — a line", p.svg()))
+
+    # 2 — a plane
+    p = paper()
+    p.poly([(1, 1), (4, 1), (4, 4), (1, 4)], "cell")
+    p.label(2.5, 1, "a plane", dx=0, dy=20)
+    pages.append(("2 degrees of freedom — a plane", p.svg()))
+
+    # 3 — a volume (cube, oblique)
+    p = paper()
+    off = (0.95, 0.72)
+    front = [(1, 1), (3.2, 1), (3.2, 3.2), (1, 3.2)]
+    back = [(c[0] + off[0], c[1] + off[1]) for c in front]
+    _edges(p, front)
+    _edges(p, back)
+    for a, b in zip(front, back):
+        p.seg(a[0], a[1], b[0], b[1])
+    p.label(1, 3.2, "a volume", dx=2, dy=-26)
+    pages.append(("3 degrees of freedom — a volume", p.svg()))
+
+    # 4 — a projection (tesseract, oblique)
+    p = paper()
+    off, woff = (0.8, 0.6), (-0.7, 1.05)
+    front = [(0.9, 0.6), (2.6, 0.6), (2.6, 2.3), (0.9, 2.3)]
+    back = [(c[0] + off[0], c[1] + off[1]) for c in front]
+    cubeA = front + back
+    cubeB = [(c[0] + woff[0], c[1] + woff[1]) for c in cubeA]
+    _edges(p, front)
+    _edges(p, back)
+    for a, b in zip(front, back):
+        p.seg(a[0], a[1], b[0], b[1])
+    _edges(p, cubeB[:4], "diag")
+    _edges(p, cubeB[4:], "diag")
+    for a, b in zip(cubeB[:4], cubeB[4:]):
+        p.seg(a[0], a[1], b[0], b[1], "diag")
+    for a, b in zip(cubeA, cubeB):
+        p.seg(a[0], a[1], b[0], b[1], "diag")
+    p.label(0.0, 4.4, "a projection — the 4th cannot lie flat", dx=0, dy=0)
+    pages.append(("4 degrees of freedom — a projection onto the page", p.svg()))
+
+    return pages

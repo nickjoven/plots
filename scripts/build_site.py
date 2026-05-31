@@ -121,6 +121,51 @@ def md_to_html(md):
     return "\n".join(out)
 
 
+def build_book(pages):
+    leaves = []
+    for k, (caption, svg) in enumerate(pages):
+        cur = " cur" if k == 0 else ""
+        leaves.append(
+            f'<figure class="leaf{cur}">{svg}'
+            f'<figcaption>{html.escape(caption)}</figcaption></figure>')
+    body = f"""<h1>book</h1>
+<p>Turn the page forward to add a degree of freedom, back to remove one. A
+point is none, a line is one, a plane is two, a volume is three; the fourth
+cannot lie flat on the page and is shown projected. Use the arrow keys or the
+buttons.</p>
+<div id="book">
+<div class="pages">{''.join(leaves)}</div>
+<div class="controls">
+<button id="prev">&#9664; back</button>
+<span id="meter"></span>
+<button id="next">forward &#9654;</button>
+</div>
+</div>
+<script>
+const leaves = [...document.querySelectorAll('.leaf')];
+let i = 0;
+const meter = document.getElementById('meter');
+const prev = document.getElementById('prev');
+const next = document.getElementById('next');
+function show() {{
+  leaves.forEach((l, k) => l.classList.toggle('cur', k === i));
+  meter.textContent = i + ' degree' + (i === 1 ? '' : 's') +
+    ' of freedom  \\u00b7  page ' + (i + 1) + ' / ' + leaves.length;
+  prev.disabled = i === 0;
+  next.disabled = i === leaves.length - 1;
+}}
+function go(d) {{ i = Math.max(0, Math.min(leaves.length - 1, i + d)); show(); }}
+prev.onclick = () => go(-1);
+next.onclick = () => go(1);
+document.addEventListener('keydown', e => {{
+  if (e.key === 'ArrowRight') go(1);
+  if (e.key === 'ArrowLeft') go(-1);
+}});
+show();
+</script>"""
+    return page("book — degrees of freedom", body)
+
+
 def plot_number(name):
     m = re.match(r"^(\d+)", name)
     return int(m.group(1)) if m else 999
@@ -171,7 +216,8 @@ def build():
             "coordinate-grid figure meant to be redrawn by hand. The order is "
             "ontological: nothing is drawn before the parts it is built from.</p>",
             '<p class="links"><a href="grammar.html">grammar</a> &middot; '
-            '<a href="map.html">map and order</a></p>']
+            '<a href="map.html">map and order</a> &middot; '
+            '<a href="book.html">book (degrees of freedom)</a></p>']
     for lo, hi, label in LAYERS:
         group = [e for e in entries if lo <= e[0] <= hi]
         body.append(f"<h2>{html.escape(label)}</h2>")
@@ -185,6 +231,9 @@ def build():
                 f'<li><span class="num">{num:02d}</span> '
                 f'<a href="{out_name}">{html.escape(title)}</a></li>')
         body.append("</ul>")
+    # the book (paging prototype)
+    (DOCS / "book.html").write_text(build_book(figures.dof_pages()))
+
     index = page("plots", "\n".join(body))
     # the index has no back-link
     index = index.replace(
@@ -255,6 +304,19 @@ figcaption { font-size: 12px; color: #5a6b7a; margin-top: 6px; max-width: 320px;
 details { margin-top: 18px; }
 summary { cursor: pointer; color: var(--accent); font-size: 13px; }
 details pre.plot { margin-top: 12px; }
+#book { max-width: 540px; }
+.pages { position: relative; }
+.pages .leaf { display: none; margin: 0; }
+.pages .leaf.cur { display: block; }
+.pages .leaf svg { display: block; border: 1px solid var(--line); border-radius: 4px; background: #fff; }
+.controls { display: flex; align-items: center; gap: 18px; margin-top: 16px; }
+.controls button {
+  font: inherit; padding: 6px 13px; border: 1px solid var(--line);
+  background: #fff; border-radius: 4px; cursor: pointer; color: var(--accent);
+}
+.controls button:disabled { color: #b9c6d2; cursor: default; }
+#meter { font-size: 13px; color: #5a6b7a; }
+.pages .leaf figcaption { margin-top: 8px; font-size: 12px; color: #5a6b7a; }
 """
 
 
