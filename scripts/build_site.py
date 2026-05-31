@@ -18,6 +18,8 @@ import html
 import re
 from pathlib import Path
 
+import figures
+
 ROOT = Path(__file__).resolve().parent.parent
 DOCS = ROOT / "docs"
 PLOTS = ROOT / "plots"
@@ -126,6 +128,7 @@ def plot_number(name):
 
 def build():
     DOCS.mkdir(exist_ok=True)
+    (DOCS / "svg").mkdir(exist_ok=True)
     (DOCS / ".nojekyll").write_text("")
     (DOCS / "style.css").write_text(CSS)
 
@@ -135,10 +138,24 @@ def build():
     for p in plots:
         text = p.read_text()
         title = text.splitlines()[0].strip() if text.strip() else p.stem
-        body = (f"<h1>{html.escape(title)}</h1>\n"
-                f"<pre class=\"plot\">{html.escape(text)}</pre>")
+        parts = [f"<h1>{html.escape(title)}</h1>"]
+        renderer = figures.RENDERERS.get(p.stem)
+        if renderer:
+            parts.append('<div class="gallery">')
+            for k, (caption, svg) in enumerate(renderer()):
+                svg_name = f"svg/{p.stem}-{k}.svg"
+                (DOCS / svg_name).write_text(svg)
+                parts.append(
+                    f'<figure><img src="{svg_name}" alt="{html.escape(caption)}">'
+                    f'<figcaption>{html.escape(caption)}</figcaption></figure>')
+            parts.append("</div>")
+            parts.append(
+                "<details><summary>text and redraw spec</summary>"
+                f"<pre class=\"plot\">{html.escape(text)}</pre></details>")
+        else:
+            parts.append(f"<pre class=\"plot\">{html.escape(text)}</pre>")
         out_name = f"{p.stem}.html"
-        (DOCS / out_name).write_text(page(title, body))
+        (DOCS / out_name).write_text(page(title, "\n".join(parts)))
         entries.append((plot_number(p.stem), p.stem, title, out_name))
 
     # grammar + map
@@ -225,6 +242,18 @@ table { border-collapse: collapse; margin: 12px 0; font-size: 13px; }
 th, td { border: 1px solid var(--line); padding: 4px 10px; text-align: left; vertical-align: top; }
 th { background: #f1f7fc; }
 code { background: #f1f7fc; padding: 1px 4px; border-radius: 3px; }
+.gallery { display: flex; flex-wrap: wrap; gap: 18px; margin: 16px 0; }
+figure { margin: 0; }
+figure img {
+  display: block;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: #fff;
+}
+figcaption { font-size: 12px; color: #5a6b7a; margin-top: 6px; max-width: 320px; }
+details { margin-top: 18px; }
+summary { cursor: pointer; color: var(--accent); font-size: 13px; }
+details pre.plot { margin-top: 12px; }
 """
 
 

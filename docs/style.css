@@ -46,3 +46,15 @@ table { border-collapse: collapse; margin: 12px 0; font-size: 13px; }
 th, td { border: 1px solid var(--line); padding: 4px 10px; text-align: left; vertical-align: top; }
 th { background: #f1f7fc; }
 code { background: #f1f7fc; padding: 1px 4px; border-radius: 3px; }
+.gallery { display: flex; flex-wrap: wrap; gap: 18px; margin: 16px 0; }
+figure { margin: 0; }
+figure img {
+  display: block;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: #fff;
+}
+figcaption { font-size: 12px; color: #5a6b7a; margin-top: 6px; max-width: 320px; }
+details { margin-top: 18px; }
+summary { cursor: pointer; color: var(--accent); font-size: 13px; }
+details pre.plot { margin-top: 12px; }

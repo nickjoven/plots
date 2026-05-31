@@ -10,7 +10,13 @@
 <main>
 <p class="back"><a href="index.html">&larr; index</a></p>
 <h1>SHEAR  /  LEAN</h1>
-<pre class="plot">SHEAR  /  LEAN
+<div class="gallery">
+<figure><img src="svg/05-shear-0.svg" alt="frame 0 (I)"><figcaption>frame 0 (I)</figcaption></figure>
+<figure><img src="svg/05-shear-1.svg" alt="frame 1 (T)"><figcaption>frame 1 (T)</figcaption></figure>
+<figure><img src="svg/05-shear-2.svg" alt="frame 2 (T applied twice)"><figcaption>frame 2 (T applied twice)</figcaption></figure>
+<figure><img src="svg/05-shear-3.svg" alt="vector view: the tip walks right along y=1"><figcaption>vector view: the tip walks right along y=1</figcaption></figure>
+</div>
+<details><summary>text and redraw spec</summary><pre class="plot">SHEAR  /  LEAN
 T = [[1,1],[0,1]]      (x,y) -&gt; (x+y, y)      det = 1
 
 The shear is the move that slides each point to the right by an amount equal to
@@ -100,7 +106,7 @@ this process.
 To redraw the whole move by hand, plot the origin and the x-axis, then mark one
 point at height 1. Move that point one square to the right for each step. Marking
 that single walking point is enough to capture the entire shear.
-</pre>
+</pre></details>
 </main>
 </body>
 </html>
