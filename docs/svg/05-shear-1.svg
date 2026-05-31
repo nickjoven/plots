@@ -1,23 +1,24 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180.2 136" width="180.2" height="136" class="gp"><defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="arrowhead"/></marker></defs><style>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180.2 119" width="180.2" height="119" class="gp"><defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="arrowhead"/></marker></defs><style>
 .gp { background:#ffffff; font-family:ui-monospace,Menlo,Consolas,monospace; }
-.min { stroke:#dcebf6; stroke-width:1; }
-.maj { stroke:#bcd6ec; stroke-width:1; }
-.axis { stroke:#7f97ad; stroke-width:1.4; }
-.origin { fill:#7f97ad; }
-.latt { fill:#c2d2e0; }
-.dot { fill:#33424f; }
-.mark { fill:#2b5d86; }
-.tip { fill:#c0392b; }
-.vec { stroke:#2b5d86; stroke-width:2; fill:none; }
-.vec2 { stroke:#c0392b; stroke-width:2; stroke-dasharray:4 3; fill:none; }
-.edge { stroke:#33424f; stroke-width:1.6; }
-.cell { fill:rgba(43,93,134,0.12); stroke:#2b5d86; stroke-width:1.6; }
-.cell2 { fill:rgba(192,57,43,0.10); stroke:#c0392b; stroke-width:1.4; }
-.path { stroke:#c0392b; stroke-width:1.8; fill:none; }
-.curve { stroke:#2b5d86; stroke-width:1.8; fill:none; }
-.diag { stroke:#7f97ad; stroke-width:1.4; fill:none; stroke-dasharray:5 3; }
-.arrowhead { fill:#2b5d86; }
-.label { fill:#33424f; font-size:11px; }
-.label.r { fill:#c0392b; }
-.label.b { fill:#2b5d86; }
-</style><line x1="0" y1="-0" x2="0" y2="136" class="min"/><line x1="34" y1="-0" x2="34" y2="136" class="maj"/><line x1="68" y1="-0" x2="68" y2="136" class="min"/><line x1="102" y1="-0" x2="102" y2="136" class="min"/><line x1="136" y1="-0" x2="136" y2="136" class="min"/><line x1="170" y1="-0" x2="170" y2="136" class="min"/><line x1="0" y1="136" x2="170" y2="136" class="min"/><line x1="0" y1="102" x2="170" y2="102" class="maj"/><line x1="0" y1="68" x2="170" y2="68" class="min"/><line x1="0" y1="34" x2="170" y2="34" class="min"/><line x1="0" y1="-0" x2="170" y2="-0" class="min"/><line x1="0" y1="102" x2="170" y2="102" class="axis"/><line x1="34" y1="-0" x2="34" y2="136" class="axis"/><circle cx="34" cy="102" r="2.6" class="origin"/><circle cx="34" cy="102" r="2" class="latt"/><circle cx="34" cy="68" r="2" class="latt"/><circle cx="34" cy="34" r="2" class="latt"/><circle cx="68" cy="102" r="2" class="latt"/><circle cx="68" cy="68" r="2" class="latt"/><circle cx="68" cy="34" r="2" class="latt"/><circle cx="102" cy="102" r="2" class="latt"/><circle cx="102" cy="68" r="2" class="latt"/><circle cx="102" cy="34" r="2" class="latt"/><circle cx="136" cy="102" r="2" class="latt"/><circle cx="136" cy="68" r="2" class="latt"/><circle cx="136" cy="34" r="2" class="latt"/><polygon points="34,102 68,102 102,68 68,68" class="cell"/><line x1="34" y1="102" x2="68" y2="102" class="vec" marker-end="url(#arrow)"/><line x1="34" y1="102" x2="68" y2="68" class="vec" marker-end="url(#arrow)"/><circle cx="68" cy="68" r="3.4" class="tip"/><text x="73" y="62" text-anchor="start" class="label r">(1,1)</text></svg>
+.gp .min { stroke:#dcebf6; stroke-width:1; }
+.gp .maj { stroke:#bcd6ec; stroke-width:1; }
+.gp .axis { stroke:#7f97ad; stroke-width:1.4; }
+.gp .origin { fill:#7f97ad; }
+.gp .latt { fill:#c2d2e0; }
+.gp .dot { fill:#33424f; }
+.gp .mark { fill:#2b5d86; }
+.gp .tip { fill:#c0392b; }
+.gp .vec { stroke:#2b5d86; stroke-width:2; fill:none; }
+.gp .vec2 { stroke:#c0392b; stroke-width:2; stroke-dasharray:4 3; fill:none; }
+.gp .edge { stroke:#33424f; stroke-width:1.6; }
+.gp .cell { fill:rgba(43,93,134,0.12); stroke:#2b5d86; stroke-width:1.6; }
+.gp .cell2 { fill:rgba(192,57,43,0.10); stroke:#c0392b; stroke-width:1.4; }
+.gp .ghost { fill:none; stroke:#9fb3c6; stroke-width:1.2; stroke-dasharray:4 3; }
+.gp .path { stroke:#c0392b; stroke-width:1.8; fill:none; }
+.gp .curve { stroke:#2b5d86; stroke-width:1.8; fill:none; }
+.gp .diag { stroke:#7f97ad; stroke-width:1.4; fill:none; stroke-dasharray:5 3; }
+.gp .arrowhead { fill:#2b5d86; }
+.gp .label { fill:#33424f; font-size:11px; }
+.gp .label.r { fill:#c0392b; }
+.gp .label.b { fill:#2b5d86; }
+</style><line x1="0" y1="17" x2="0" y2="119" class="min"/><line x1="34" y1="17" x2="34" y2="119" class="maj"/><line x1="68" y1="17" x2="68" y2="119" class="min"/><line x1="102" y1="17" x2="102" y2="119" class="min"/><line x1="136" y1="17" x2="136" y2="119" class="min"/><line x1="170" y1="17" x2="170" y2="119" class="min"/><line x1="0" y1="119" x2="170" y2="119" class="min"/><line x1="0" y1="85" x2="170" y2="85" class="maj"/><line x1="0" y1="51" x2="170" y2="51" class="min"/><line x1="0" y1="17" x2="170" y2="17" class="min"/><line x1="0" y1="85" x2="170" y2="85" class="axis"/><line x1="34" y1="17" x2="34" y2="119" class="axis"/><circle cx="34" cy="85" r="2.6" class="origin"/><circle cx="34" cy="85" r="2" class="latt"/><circle cx="34" cy="51" r="2" class="latt"/><circle cx="68" cy="85" r="2" class="latt"/><circle cx="68" cy="51" r="2" class="latt"/><circle cx="102" cy="85" r="2" class="latt"/><circle cx="102" cy="51" r="2" class="latt"/><circle cx="136" cy="85" r="2" class="latt"/><circle cx="136" cy="51" r="2" class="latt"/><line x1="34" y1="85" x2="68" y2="85" class="vec" marker-end="url(#arrow)"/><circle cx="34" cy="51" r="3.4" class="tip"><animate attributeName="cx" dur="4.0s" values="34;68;102;136;102;68;34" repeatCount="indefinite"/><animate attributeName="cy" dur="4.0s" values="51;51;51;51;51;51;51" repeatCount="indefinite"/></circle></svg>

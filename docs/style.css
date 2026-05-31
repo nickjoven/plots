@@ -48,7 +48,7 @@ th { background: #f1f7fc; }
 code { background: #f1f7fc; padding: 1px 4px; border-radius: 3px; }
 .gallery { display: flex; flex-wrap: wrap; gap: 18px; margin: 16px 0; }
 figure { margin: 0; }
-figure img {
+figure img, figure svg {
   display: block;
   border: 1px solid var(--line);
   border-radius: 4px;

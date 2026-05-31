@@ -143,10 +143,11 @@ def build():
         if renderer:
             parts.append('<div class="gallery">')
             for k, (caption, svg) in enumerate(renderer()):
-                svg_name = f"svg/{p.stem}-{k}.svg"
-                (DOCS / svg_name).write_text(svg)
+                # write a standalone file (for direct viewing) and inline the
+                # same SVG into the page so its SMIL animation runs.
+                (DOCS / f"svg/{p.stem}-{k}.svg").write_text(svg)
                 parts.append(
-                    f'<figure><img src="{svg_name}" alt="{html.escape(caption)}">'
+                    f'<figure>{svg}'
                     f'<figcaption>{html.escape(caption)}</figcaption></figure>')
             parts.append("</div>")
             parts.append(
@@ -244,7 +245,7 @@ th { background: #f1f7fc; }
 code { background: #f1f7fc; padding: 1px 4px; border-radius: 3px; }
 .gallery { display: flex; flex-wrap: wrap; gap: 18px; margin: 16px 0; }
 figure { margin: 0; }
-figure img {
+figure img, figure svg {
   display: block;
   border: 1px solid var(--line);
   border-radius: 4px;
